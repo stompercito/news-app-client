@@ -1,0 +1,79 @@
+<h1>Titulares</h1>
+<div class="dropdown">
+    <button class="dropbtn">Select Country</button>
+    <div class="dropdown-content">
+      <a routerLink="ar">Argentina</a>
+      <a routerLink="au">Australia</a>
+      <a routerLink="at">Austria</a>
+      <a routerLink="be">Belgium</a>
+      <a routerLink="br">brazil</a>
+      <a routerLink="bg">Bulgaria</a>
+      <a routerLink="ca">Canada</a>
+      <a routerLink="cn">China</a>
+      <a routerLink="co">Colombia</a>
+      <a routerLink="cu">Cuba</a>
+      <a routerLink="cz">Czech Republic</a>
+      <a routerLink="eg">Egypt</a>
+      <a routerLink="fr">France</a>
+      <a routerLink="de">Germany</a>
+      <a routerLink="gr">Greece</a>
+      <a routerLink="hk">Honk Kong</a>
+      <a routerLink="hu">Hungary</a>
+      <a routerLink="in">India</a>
+      <a routerLink="id">Indonesia</a>
+      <a routerLink="ie">Ireland</a>
+      <a routerLink="il">Israel</a>
+      <a routerLink="it">Italy</a>
+      <a routerLink="jp">Japan</a>
+      <a routerLink="lv">Latvia</a>
+      <a routerLink="lt">Lithuania</a>
+      <a routerLink="my">Malaysia</a>
+      <a routerLink="mx">México</a>
+      <a routerLink="ma">Morocco</a>
+      <a routerLink="nl">Netherlands</a>
+      <a routerLink="nz">New Zealand</a>
+      <a routerLink="ng">Nigeria</a>
+      <a routerLink="no">Norwey</a>
+      <a routerLink="ph">Philippines</a>
+      <a routerLink="pl">Poland</a>
+      <a routerLink="pt">Portugal</a>
+      <a routerLink="ro">Romania</a>
+      <a routerLink="ru">Russia</a>
+      <a routerLink="sa">Saudi Arabia</a>
+      <a routerLink="rs">Serbia</a>
+      <a routerLink="sg">Singapore</a>
+      <a routerLink="sk">Slovakia</a>
+      <a routerLink="si">Slovenia</a>
+      <a routerLink="za">South Africa</a>
+      <a routerLink="kr">South Korea</a>
+      <a routerLink="se">Sweden</a>
+      <a routerLink="ch">Switzerland</a>
+      <a routerLink="tw">Taiwan</a>
+      <a routerLink="th">Thailand</a>
+      <a routerLink="tr">Turkey</a>
+      <a routerLink="ae">UAE</a>
+      <a routerLink="ua">Ukraine</a>
+      <a routerLink="gb">United Kingdom</a>
+      <a routerLink="us">United States</a>
+      <a routerLink="ve">Venezuela</a>
+    </div>
+</div>
+
+<p>Noticias de {{titularesCountry}}</p>
+
+<ul>
+    <div class="sm-50 md-25">
+        <li *ngFor="let item of news">
+            <a href="{{item.url}}">
+                <ng-template [ngIf]="item.urlToImage" [ngIfElse]="noImg">
+                    <img src="{{item.urlToImage}}" alt="news image">
+                </ng-template>
+
+                <ng-template #noImg>
+                    <img src="https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg" alt="">
+                </ng-template>
+                {{item.title}}
+            </a>
+        </li>
+    </div>
+</ul>
