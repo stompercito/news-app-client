@@ -1,5 +1,29 @@
 <h1>Noticias</h1>
 
-<!--<select name="sources" id="sources">
-    <option *ngFor= "let item of sources" value="item.id">{{item.id}}</option>
-</select>-->
+<p>Ingrese el tópico que desea buscar:</p>
+<input type="text" id="topic-in" name="topic-in" placeholder="Tema">
+
+<p>Seleccione el source deseado:</p>
+<select name="sources-s" id="sources-s">
+    <option  value="All">All</option>
+    <option *ngFor= "let item of sources" value="{{item.id}}">{{item.name}}</option>
+</select>
+
+
+<p><button class="button search" (click)="searchNews()">Buscar Noticias</button></p>
+
+<p *ngIf="query">Noticias sobre {{query.value}}</p>
+
+<ul class="news-list">
+        <li class="lg-25 md-50 sm-100" *ngFor="let item of news" >
+                <ng-template [ngIf]="item.urlToImage" [ngIfElse]="noImg">
+                    <img src="{{item.urlToImage}}" alt="news image" >
+                </ng-template>
+
+                <ng-template #noImg>
+                    <img src="https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg" alt="">
+                </ng-template>
+                <br>
+            <a href="{{item.url}}">{{item.title}}</a>
+        </li>
+</ul>
