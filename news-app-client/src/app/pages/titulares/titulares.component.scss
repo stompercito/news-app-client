@@ -39,3 +39,47 @@
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  img {
+    height: 200px;
+    width: 400px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    width: 400px;
+  }
+  
+.news-list {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+
+.news-list:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.news-list > li {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+  .news-list > .lg-25 { width: 25%; }
+  
+  /* On screens that are less than 1600px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 1600px) {
+    .news-list > .md-25 { width: 25%; }
+    .news-list > .md-50 { width: 50%; }
+  }
+
+    /* On screens that are less than 1000px wide, make the sidebar into a topbar */
+    @media screen and (max-width: 1000px) {
+      .news-list > .sm-100 { width: 100%; }
+    }
