@@ -10,8 +10,6 @@ export class NewsService {
 
   apiUrl:String="https://newsapi.org/v2/";
   apiUrl2:String="http://localhost:3000/";
-  apiKey:String="1e30c02c90b84a46a828833a44569f18";
-  apiKey2:String="0baf3e670623453293527fd712ced36a";
 
   getSources():Promise<any>  {
     const url = `${this.apiUrl2}fuentes`;
